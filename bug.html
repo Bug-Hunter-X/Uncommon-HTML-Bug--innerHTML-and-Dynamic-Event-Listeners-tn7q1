@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+
+  <script>
+    // Simulate an uncommon bug:  Incorrect use of innerHTML that leads to unexpected behavior
+    // with dynamically added content and event listeners
+    const myDiv = document.getElementById('myDiv');
+    const newContent = '<button onclick="alert("+1+")">Click Me</button>';
+
+    myDiv.innerHTML = newContent; // Bug: Overwrites previous content and doesn't correctly handle event listeners in dynamically added HTML
+
+    //The expected alert is 2 instead of 1. Event listeners are not properly attached
+    //when innerHTML is used to replace existing content.
+
+  </script>
+</body>
+</html>
