@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+
+  <script>
+    const myDiv = document.getElementById('myDiv');
+    const button = document.createElement('button');
+    button.textContent = 'Click Me';
+    button.addEventListener('click', () => {
+      alert(2);
+    });
+    myDiv.appendChild(button); 
+  </script>
+</body>
+</html>
